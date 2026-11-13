@@ -3,427 +3,659 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy — expense-logger-app</title>
-  <meta name="description" content="Privacy Policy for expense-logger-app, a local-first personal expense and cashbook app.">
+  <title>Privacy Policy — Ledger</title>
+  <meta name="description" content="Privacy Policy for Ledger, a local-first personal expense and cashbook app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f9f9ff;
-      --card: #ffffff;
-      --ink: #151c27;
-      --muted: #5c6570;
-      --accent: #2196f3;
-      --line: #e2e6ee;
-      --max: 42rem;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--ink);
-      background: var(--bg);
-    }
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--line);
-      padding: 1.5rem 1.25rem 1.25rem;
-    }
-    header h1 {
-      margin: 0 0 0.35rem;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    header .meta {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin: 0 0 0.75rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--line);
-    }
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 1.25rem 0 0.5rem;
-    }
-    p { margin: 0.5rem 0; }
-    ul, ol { margin: 0.5rem 0; padding-left: 1.35rem; }
-    li { margin: 0.35rem 0; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      margin: 0.75rem 0;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    th, td {
-      text-align: left;
-      padding: 0.6rem 0.75rem;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-    th {
-      background: #f0f3f8;
-      font-weight: 600;
-    }
-    tr:last-child td { border-bottom: none; }
-    a { color: var(--accent); }
-    .contact-block {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-      margin-top: 0.75rem;
-    }
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1.25rem 2rem;
-      font-size: 0.85rem;
-      color: var(--muted);
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef2f8;
+      --ink: #121a2a;
+      --muted: #566176;
+      --line: #dde3ee;
+      --accent: #1769d1;
+      --accent-soft: #e6f0fd;
+      --hero: #0e1b2e;
+      --hero-ink: #f2f6fc;
+      --hero-muted: #9fb1c9;
+      --note-bg: #fff7e0;
+      --note-line: #f0d98a;
+      --radius: 10px;
+      --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1016;
-        --card: #1a1c24;
-        --ink: #e8eaef;
-        --muted: #9aa3ad;
-        --line: #2d323c;
+        --bg: #0b111b;
+        --surface: #121a28;
+        --surface-2: #19233a;
+        --ink: #e7ecf4;
+        --muted: #9aa8bd;
+        --line: #26324a;
+        --accent: #5ea2f5;
+        --accent-soft: #162a47;
+        --hero: #08101c;
+        --note-bg: #2a2412;
+        --note-line: #5a4b1c;
       }
-      th { background: #22252e; }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 2px; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--hero);
+      color: var(--hero-ink);
+      padding: 3.25rem 1.5rem 2.75rem;
+    }
+    .hero-inner { max-width: 72rem; margin: 0 auto; }
+    .brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand-mark {
+      width: 2.5rem; height: 2.5rem; border-radius: 10px;
+      background: var(--accent);
+      display: grid; place-items: center;
+      flex: none;
+    }
+    .brand-mark svg { width: 1.4rem; height: 1.4rem; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .brand-name { font-weight: 600; font-size: 1.05rem; letter-spacing: 0.01em; }
+    .hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .hero .lede { margin: 0 0 1.75rem; max-width: 38rem; color: var(--hero-muted); font-size: 1.08rem; }
+    .hero dl { display: flex; flex-wrap: wrap; gap: 0.5rem 2.5rem; margin: 0; }
+    .hero dt { font-size: 0.8rem; color: var(--hero-muted); }
+    .hero dd { margin: 0; font-weight: 500; }
+
+    /* ---------- Layout ---------- */
+    .layout {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 15rem minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 52rem) {
+      .layout { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.25rem 1rem 3rem; }
+    }
+
+    /* ---------- Table of contents ---------- */
+    .toc { position: sticky; top: 1.5rem; }
+    .toc-title { font-size: 0.85rem; font-weight: 600; color: var(--muted); margin: 0 0 0.6rem; }
+    .toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+    .toc a {
+      display: block;
+      padding: 0.3rem 0 0.3rem 0.9rem;
+      margin-left: -2px;
+      border-left: 2px solid transparent;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+    @media (max-width: 52rem) {
+      .toc { position: static; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+      .toc summary { cursor: pointer; padding: 0.85rem 1rem; font-weight: 600; font-size: 0.95rem; }
+      .toc ol { border-left: none; padding: 0 0.5rem 0.75rem; }
+      .toc a { margin-left: 0; padding-left: 0.5rem; }
+    }
+    @media (min-width: 52.01rem) {
+      .toc summary { list-style: none; pointer-events: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 0.6rem; }
+      .toc summary::-webkit-details-marker { display: none; }
+    }
+
+    /* ---------- Content ---------- */
+    .content { min-width: 0; }
+
+    .glance {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .glance h2 { margin: 0 0 0.75rem; padding: 0; border: none; font-size: 1.1rem; }
+    .glance ul { margin: 0; padding-left: 1.2rem; }
+    .glance li { margin: 0.4rem 0; }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 40rem) { section { padding: 1.25rem 1.1rem 1rem; } }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin: 0 0 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--line);
+    }
+    h3 { font-size: 1.02rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
+    p { margin: 0.6rem 0; max-width: 46rem; }
+    ul, ol { margin: 0.6rem 0; padding-left: 1.3rem; max-width: 46rem; }
+    li { margin: 0.4rem 0; }
+    code { font-size: 0.9em; background: var(--surface-2); padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+    .table-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--line); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 32rem; }
+    th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--surface-2); font-weight: 600; font-size: 0.88rem; color: var(--muted); }
+    tr:last-child td { border-bottom: none; }
+
+    .note {
+      background: var(--note-bg);
+      border: 1px solid var(--note-line);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
+      max-width: 46rem;
+    }
+    .note p { margin: 0; }
+
+    .contact-block {
+      background: var(--accent-soft);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      margin-top: 0.75rem;
+      max-width: 28rem;
+    }
+    .contact-block p { margin: 0.25rem 0; }
+
+    footer {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer p { margin: 0; max-width: none; }
+
+    @media print {
+      .toc, .hero dl { display: none; }
+      .layout { display: block; padding: 0; }
+      .hero { background: none; color: #000; padding: 0 0 1rem; }
+      .hero .lede { color: #333; }
+      section, .glance { border: none; padding: 0; break-inside: avoid-page; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Privacy Policy</h1>
-    <p class="meta"><strong>App:</strong> expense-logger-app &nbsp;·&nbsp; <strong>Effective:</strong> 18 October 2025 &nbsp;·&nbsp; <strong>Last updated:</strong> 18 October 2025</p>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 7h13a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z"/><path d="M4 7l11-3v3"/><circle cx="16" cy="14" r="1"/></svg>
+        </span>
+        <span class="brand-name">Ledger</span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="lede">What the app stores, what it shares, and the choices you have. Your cashbook stays on your device.</p>
+      <dl>
+        <div><dt>Published by</dt><dd>Akshay Bhujang</dd></div>
+        <div><dt>Effective</dt><dd>18 October 2025</dd></div>
+        <div><dt>Last updated</dt><dd>13 November 2026</dd></div>
+      </dl>
+    </div>
   </header>
 
-  <main>
-    <section id="introduction">
-      <h2>1. Introduction</h2>
-      <p>
-        This Privacy Policy describes how <strong>expense-logger-app</strong> (the “App”), published by
-        <strong>Akshay Bhujang</strong> (“we”, “us”, or “our”), handles information when you use the App.
-      </p>
-      <p>
-        The App is a personal cashbook and expense logger. Your accounts, transactions, and notes are stored
-        <strong>on your device</strong>. We do not operate sign-in or cloud sync for your cashbook in the current version.
-        <strong>This version of the App does not show advertisements.</strong>
-      </p>
-      <p>Privacy questions and grievances: <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a></p>
-    </section>
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <details open>
+        <summary>On this page</summary>
+        <ol>
+          <li><a href="#introduction">1. Introduction</a></li>
+          <li><a href="#information-we-collect">2. Information we collect</a></li>
+          <li><a href="#how-we-use">3. How we use information</a></li>
+          <li><a href="#how-information-is-shared">4. How information is shared</a></li>
+          <li><a href="#visible-to-others">5. Visibility to other users</a></li>
+          <li><a href="#data-retention">6. Data retention</a></li>
+          <li><a href="#account-and-data-deletion">7. Data deletion</a></li>
+          <li><a href="#your-rights">8. Your rights and choices</a></li>
+          <li><a href="#data-security">9. Data security</a></li>
+          <li><a href="#children">10. Children’s privacy</a></li>
+          <li><a href="#international">11. International transfers</a></li>
+          <li><a href="#regional">12. Regional notices</a></li>
+          <li><a href="#third-party-services">13. Third-party services</a></li>
+          <li><a href="#changes">14. Changes to this policy</a></li>
+          <li><a href="#contact">15. Contact us</a></li>
+        </ol>
+      </details>
+    </nav>
 
-    <section id="information-we-collect">
-      <h2>2. Information We Collect</h2>
-
-      <h3>2.1 Information you provide</h3>
-      <p>You create and manage the following on your device:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Examples</th>
-            <th>Where it is stored</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cashbook accounts</td>
-            <td>Account name, opening balance, running balance</td>
-            <td>On-device database</td>
-          </tr>
-          <tr>
-            <td>Transactions</td>
-            <td>Amount, income/expense type, category, date/time, optional notes</td>
-            <td>On-device database</td>
-          </tr>
-          <tr>
-            <td>Categories</td>
-            <td>Predefined and app-managed category records</td>
-            <td>On-device database</td>
-          </tr>
-          <tr>
-            <td>App preferences</td>
-            <td>Dark mode, preferred currency</td>
-            <td>On-device settings storage</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Notes you add to a transaction stay on your device unless you export or share them (for example as a PDF).
-      </p>
-      <p>
-        The App uses a local placeholder record for database structure only (not a real email login). We do not
-        collect your email address to create an account.
-      </p>
-
-      <h3>2.2 Information collected automatically</h3>
-      <p>
-        We do <strong>not</strong> run our own analytics, crash reporting, or advertising in this version of the App.
-        We do <strong>not</strong> send your cashbook data to our servers (there is no app-owned backend for your logs).
-      </p>
-
-      <h3>2.3 Information from permissions</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Permission / capability</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Notifications</strong> (Android, when saving a PDF if not already allowed)</td>
-            <td>Show a local “PDF saved” message with the save location. Notifications are local only; we do not send remote push messages.</td>
-          </tr>
-          <tr>
-            <td><strong>File storage &amp; sharing</strong> (export PDF)</td>
-            <td>Save a PDF in the App’s storage and open the system share sheet so you can save or send the file to an app you choose.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        The App does <strong>not</strong> request location, camera, microphone, contacts, or photo library access.
-      </p>
-
-      <h3>2.4 Information from third parties</h3>
-      <p>
-        There is no Google, Apple, phone, or email sign-in. We do not receive profile data from third-party login providers.
-      </p>
-    </section>
-
-    <section id="how-we-use">
-      <h2>3. How We Use Your Information</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Purpose</th>
-            <th>Data used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Run the cashbook (accounts, transactions, search, analytics)</td>
-            <td>Local accounts, transactions, categories, notes</td>
-          </tr>
-          <tr>
-            <td>Remember your preferences</td>
-            <td>Dark mode, currency</td>
-          </tr>
-          <tr>
-            <td>Export statements</td>
-            <td>Local transaction data rendered into a PDF on your device</td>
-          </tr>
-          <tr>
-            <td>Confirm a PDF was saved</td>
-            <td>Local notification text (path or message)</td>
-          </tr>
-          <tr>
-            <td>Answer support or privacy emails you send us</td>
-            <td>Whatever you include in your message</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="how-information-is-shared">
-      <h2>4. How Information Is Shared</h2>
-      <h3>We do not sell your personal data</h3>
-      <p>We do <strong>not</strong> sell your cashbook data or personal information.</p>
-      <h3>Third parties</h3>
-      <ul>
-        <li>
-          <strong>Apps you choose when sharing a PDF:</strong> If you use the share sheet, the PDF (which may include
-          account name, dates, amounts, and notes) is handled by the app or service you select.
-        </li>
-        <li>
-          <strong>Our servers:</strong> We do not upload your cashbook to an app-owned cloud database.
-        </li>
-      </ul>
-      <p>
-        We may disclose information if required by law or to protect rights and safety—typically limited to correspondence
-        you send us, since we do not hold your cashbook on our servers.
-      </p>
-    </section>
-
-    <section id="visible-to-others">
-      <h2>5. Information Visible to Other Users</h2>
-      <p>Nothing in the App is visible to other users. There are no public profiles, feeds, or messaging.</p>
-      <p>
-        If you share an exported PDF through another app, that content is visible according to that service and the
-        people you send it to.
-      </p>
-    </section>
-
-    <section id="data-retention">
-      <h2>6. Data Retention</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Retention</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Local cashbook (accounts, transactions, notes)</td>
-            <td>Until you delete them in the App, clear app storage, or uninstall</td>
-          </tr>
-          <tr>
-            <td>App settings</td>
-            <td>Until you change them, clear storage, or uninstall</td>
-          </tr>
-          <tr>
-            <td>Exported PDFs in app storage</td>
-            <td>Until you delete them or uninstall / clear storage</td>
-          </tr>
-          <tr>
-            <td>Emails you send us</td>
-            <td>Only as long as needed to respond, then deleted or anonymized when no longer required</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Uninstalling the App removes on-device data in the usual way for your operating system (subject to backups you enable).</p>
-    </section>
-
-    <section id="account-and-data-deletion">
-      <h2>7. Account and Data Deletion</h2>
-      <p>
-        The App does <strong>not</strong> create cloud user accounts. All cashbook data lives on your device.
-        You delete data <strong>inside the App</strong>—there is no separate web account to close.
-      </p>
-      <h3>Delete data in the App</h3>
-      <ol>
-        <li><strong>Transactions:</strong> Open a log and use the delete action to remove that log and its items.</li>
-        <li><strong>Accounts:</strong> Open <strong>Accounts</strong>, select an account, and delete it. Deleting an account also removes its transactions from the local database.</li>
-      </ol>
-      <h3>Delete everything on the device</h3>
-      <p>
-        To remove all App data at once: clear the App’s storage in system settings, or uninstall expense-logger-app.
-        This removes the local database, settings, and PDFs saved in the App’s files.
-      </p>
-      <p>
-        We cannot remotely wipe your phone. If you emailed us personal information, contact
-        <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a> to ask us to delete that correspondence.
-      </p>
-      <p>
-        <em>If Google Play asks for a data-deletion URL, you may use this page’s address with this section:
-        <code>#account-and-data-deletion</code>.</em>
-      </p>
-    </section>
-
-    <section id="your-rights">
-      <h2>8. Your Rights and Choices</h2>
-      <p>Depending on where you live, you may have rights to access, correct, delete, or restrict use of personal data.</p>
-      <p>In the App you can:</p>
-      <ul>
-        <li>Edit or delete transactions and accounts</li>
-        <li>Change currency and dark mode in Settings</li>
-        <li>Turn off notification permission in system settings (PDF feedback may use an on-screen alert instead)</li>
-        <li>Uninstall the App to remove local data</li>
-      </ul>
-      <p>For information you sent us by email, contact <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a>.</p>
-    </section>
-
-    <section id="data-security">
-      <h2>9. Data Security</h2>
-      <ul>
-        <li>Cashbook data is stored in the App’s on-device database and preference storage.</li>
-        <li>We do not transmit cashbook contents to an app-owned server in this version.</li>
-      </ul>
-      <p>
-        No storage method is perfectly secure. Anyone with access to your unlocked device, or copies in device backups,
-        could see local data. Use your device lock screen and backup settings you are comfortable with.
-      </p>
-    </section>
-
-    <section id="children">
-      <h2>10. Children’s Privacy</h2>
-      <p>
-        The App is <strong>not directed at children</strong>. We do not knowingly collect personal information from
-        children under 13. If you believe a child has contacted us with personal information, email us and we will delete it.
-      </p>
-    </section>
-
-    <section id="international">
-      <h2>11. International Data Transfers</h2>
-      <p>
-        Your cashbook stays on your device (and in any cloud backup you configure at the OS level). We do not host your
-        cashbook on our servers in this version.
-      </p>
-    </section>
-
-    <section id="regional">
-      <h2>12. Regional Notices</h2>
-      <h3>India (Digital Personal Data Protection Act, 2023)</h3>
-      <p>
-        Akshay Bhujang is responsible for how the App is designed and for personal data you send us (for example by email).
-        Local cashbook data is processed on your device under your control. Grievance contact:
-        <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a>.
-      </p>
-      <h3>European Economic Area and United Kingdom (GDPR / UK GDPR)</h3>
-      <p>
-        Where GDPR applies, we rely on performance of the service you request (on-device cashbook features), legitimate
-        interests in operating the App, and consent where required (for example notification permission). You may have
-        rights of access, rectification, erasure, restriction, portability, and objection, and the right to complain to
-        your supervisory authority.
-      </p>
-      <h3>California (CCPA / CPRA)</h3>
-      <p>
-        We do not sell personal information. We do not share cashbook contents with third parties for cross-context
-        behavioral advertising from our servers. To request deletion of information you emailed us, contact
-        <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a>.
-      </p>
-    </section>
-
-    <section id="third-party-services">
-      <h2>13. Third-Party Services</h2>
-      <p>
-        The App uses standard mobile libraries for on-device storage, local notifications, and file save/share (for example
-        Expo / React Native components). Those libraries run on your device to provide App features; they do not upload your
-        cashbook to us.
-      </p>
-      <p>This policy does not cover other apps or websites you use when you share a PDF or leave the App.</p>
-    </section>
-
-    <section id="changes">
-      <h2>14. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy. The “Last updated” date at the top will change when we do. For important
-        changes, we may provide notice in the App or on the store listing where required.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>15. Contact Us</h2>
-      <div class="contact-block">
-        <p><strong>App:</strong> expense-logger-app</p>
-        <p><strong>Developer:</strong> Akshay Bhujang</p>
-        <p><strong>Email:</strong> <a href="mailto:[CONTACT EMAIL]">expense.logger.987@gmail.com</a></p>
+    <main class="content">
+      <div class="glance">
+        <h2>In short</h2>
+        <ul>
+          <li>Your accounts, transactions, and notes are stored on your device. We never receive them.</li>
+          <li>There is no sign-in and no cloud sync.</li>
+          <li>The App uses Firebase Crashlytics to find and fix crashes and to understand how the App performs, so future updates are easier to use.</li>
+          <li>The App shows ads through Google AdMob, which helps us keep the App available.</li>
+          <li>We do not sell your personal data.</li>
+        </ul>
       </div>
-    </section>
-  </main>
+
+      <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>
+          This Privacy Policy describes how <strong>Ledger</strong> (the “App”), published by
+          <strong>Akshay Bhujang</strong> (“we”, “us”, or “our”), handles information when you use the App.
+        </p>
+        <p>
+          The App is a personal cashbook and expense logger. Your accounts, transactions, and notes are stored
+          <strong>on your device</strong>. We do not operate sign-in or cloud sync for your cashbook in the current version.
+        </p>
+        <p>
+          The App uses <strong>Firebase Crashlytics</strong> to monitor stability and <strong>Google AdMob</strong> to show
+          advertisements. Both are described in sections 2.2, 4, and 13.
+        </p>
+        <p>Privacy questions and grievances: <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a></p>
+      </section>
+
+      <section id="information-we-collect">
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Information you provide</h3>
+        <p>You create and manage the following on your device:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Examples</th><th>Where it is stored</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cashbook accounts</td>
+                <td>Account name, opening balance, running balance</td>
+                <td>On-device database</td>
+              </tr>
+              <tr>
+                <td>Transactions</td>
+                <td>Amount, income/expense type, category, date/time, optional notes</td>
+                <td>On-device database</td>
+              </tr>
+              <tr>
+                <td>Categories</td>
+                <td>Predefined and app-managed category records</td>
+                <td>On-device database</td>
+              </tr>
+              <tr>
+                <td>App preferences</td>
+                <td>Dark mode, preferred currency</td>
+                <td>On-device settings storage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Notes you add to a transaction stay on your device unless you export or share them (for example as a PDF).</p>
+        <p>
+          The App uses a local placeholder record for database structure only (not a real email login). We do not
+          collect your email address to create an account.
+        </p>
+
+        <h3>2.2 Information collected automatically</h3>
+        <p>
+          We do <strong>not</strong> send your cashbook data to our servers. There is no app-owned backend for your logs.
+          The App does include two Google services that collect limited technical information automatically:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Service</th><th>What it may collect</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Firebase Crashlytics</strong> (Google)</td>
+                <td>Crash reports and error logs, device model, operating system version, App version, device state at the time of a crash, and a Firebase installation identifier</td>
+                <td>To find and fix crashes and to understand how the App is handled in everyday use, so we can make the experience easier in future updates. It is not used to collect your financial data or to profile you.</td>
+              </tr>
+              <tr>
+                <td><strong>Google AdMob</strong> (Google)</td>
+                <td>Advertising ID, IP address, device and OS information, and ad interaction data such as impressions and clicks</td>
+                <td>To show and measure ads. Ad revenue helps us keep the App available.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          We do not intentionally include your accounts, transactions, or notes in crash reports.
+          Google processes this information under its own policies, linked in section 13.
+        </p>
+
+        <h3>2.3 Information from permissions</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Permission / capability</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Notifications</strong> (Android, when saving a PDF if not already allowed)</td>
+                <td>Show a local “PDF saved” message with the save location. Notifications are local only; we do not send remote push messages.</td>
+              </tr>
+              <tr>
+                <td><strong>File storage &amp; sharing</strong> (export PDF)</td>
+                <td>Save a PDF in the App’s storage and open the system share sheet so you can save or send the file to an app you choose.</td>
+              </tr>
+              <tr>
+                <td><strong>Internet access and advertising ID</strong></td>
+                <td>Needed to deliver ads and to send crash reports. The cashbook itself works offline.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The App does <strong>not</strong> request location, camera, microphone, contacts, or photo library access.
+          Google’s ad services may infer an approximate region from your IP address.
+        </p>
+
+        <h3>2.4 Information from third parties</h3>
+        <p>
+          There is no Google, Apple, phone, or email sign-in. We do not receive profile data from third-party login providers.
+        </p>
+      </section>
+
+      <section id="how-we-use">
+        <h2>3. How We Use Your Information</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Purpose</th><th>Data used</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Run the cashbook (accounts, transactions, search, analytics)</td>
+                <td>Local accounts, transactions, categories, notes</td>
+              </tr>
+              <tr>
+                <td>Remember your preferences</td>
+                <td>Dark mode, currency</td>
+              </tr>
+              <tr>
+                <td>Export statements</td>
+                <td>Local transaction data rendered into a PDF on your device</td>
+              </tr>
+              <tr>
+                <td>Confirm a PDF was saved</td>
+                <td>Local notification text (path or message)</td>
+              </tr>
+              <tr>
+                <td>Fix crashes and improve future updates</td>
+                <td>Crash reports and technical device information via Firebase Crashlytics</td>
+              </tr>
+              <tr>
+                <td>Show advertisements</td>
+                <td>Advertising ID and technical device information via Google AdMob</td>
+              </tr>
+              <tr>
+                <td>Answer support or privacy emails you send us</td>
+                <td>Whatever you include in your message</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="how-information-is-shared">
+        <h2>4. How Information Is Shared</h2>
+        <h3>We do not sell your personal data</h3>
+        <p>We do <strong>not</strong> sell your cashbook data or personal information.</p>
+        <h3>Third parties</h3>
+        <ul>
+          <li>
+            <strong>Google (Firebase Crashlytics):</strong> receives crash reports and technical device information
+            so we can diagnose problems.
+          </li>
+          <li>
+            <strong>Google (AdMob):</strong> receives device and advertising identifiers and ad interaction data
+            to serve and measure ads. Ads may be personalized or non-personalized depending on your device settings
+            and, where required, your consent choice.
+          </li>
+          <li>
+            <strong>Apps you choose when sharing a PDF:</strong> if you use the share sheet, the PDF (which may include
+            account name, dates, amounts, and notes) is handled by the app or service you select.
+          </li>
+          <li>
+            <strong>Our servers:</strong> we do not upload your cashbook to an app-owned cloud database.
+          </li>
+        </ul>
+        <p>
+          We may disclose information if required by law or to protect rights and safety. This is typically limited to
+          correspondence you send us, since we do not hold your cashbook on our servers.
+        </p>
+      </section>
+
+      <section id="visible-to-others">
+        <h2>5. Information Visible to Other Users</h2>
+        <p>Nothing in the App is visible to other users. There are no public profiles, feeds, or messaging.</p>
+        <p>
+          If you share an exported PDF through another app, that content is visible according to that service and the
+          people you send it to.
+        </p>
+      </section>
+
+      <section id="data-retention">
+        <h2>6. Data Retention</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Retention</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Local cashbook (accounts, transactions, notes)</td>
+                <td>Until you delete them in the App, clear app storage, or uninstall</td>
+              </tr>
+              <tr>
+                <td>App settings</td>
+                <td>Until you change them, clear storage, or uninstall</td>
+              </tr>
+              <tr>
+                <td>Exported PDFs in app storage</td>
+                <td>Until you delete them or uninstall / clear storage</td>
+              </tr>
+              <tr>
+                <td>Crash reports (Firebase Crashlytics)</td>
+                <td>Held by Google for a limited period under Firebase’s own retention practices</td>
+              </tr>
+              <tr>
+                <td>Advertising data (Google AdMob)</td>
+                <td>Held by Google under its own retention practices</td>
+              </tr>
+              <tr>
+                <td>Emails you send us</td>
+                <td>Only as long as needed to respond, then deleted or anonymized when no longer required</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Uninstalling the App removes on-device data in the usual way for your operating system (subject to backups you enable).</p>
+      </section>
+
+      <section id="account-and-data-deletion">
+        <h2>7. Account and Data Deletion</h2>
+        <p>
+          The App does <strong>not</strong> create cloud user accounts. All cashbook data lives on your device.
+          You delete data <strong>inside the App</strong>. There is no separate web account to close.
+        </p>
+        <h3>Delete data in the App</h3>
+        <ol>
+          <li><strong>Transactions:</strong> Open a log and use the delete action to remove that log and its items.</li>
+          <li><strong>Accounts:</strong> Open <strong>Accounts</strong>, select an account, and delete it. Deleting an account also removes its transactions from the local database.</li>
+        </ol>
+        <h3>Delete everything on the device</h3>
+        <p>
+          To remove all App data at once, clear the App’s storage in system settings or uninstall Ledger.
+          This removes the local database, settings, and PDFs saved in the App’s files.
+        </p>
+        <h3>Crash and advertising data</h3>
+        <p>
+          Crash reports and advertising data are held by Google, not by us. You can reset or delete your advertising ID
+          in your device’s Google settings. To ask us to delete correspondence you sent, or to raise a request about
+          crash data linked to your installation, email
+          <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a>.
+        </p>
+        <p>We cannot remotely wipe your phone.</p>
+      </section>
+
+      <section id="your-rights">
+        <h2>8. Your Rights and Choices</h2>
+        <p>Depending on where you live, you may have rights to access, correct, delete, or restrict use of personal data.</p>
+        <p>In the App and on your device you can:</p>
+        <ul>
+          <li>Edit or delete transactions and accounts</li>
+          <li>Change currency and dark mode in Settings</li>
+          <li>Turn off notification permission in system settings (PDF feedback may use an on-screen alert instead)</li>
+          <li>Reset your advertising ID or opt out of ads personalization in your device’s Google settings, or at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a></li>
+          <li>Uninstall the App to remove local data</li>
+        </ul>
+        <p>For information you sent us by email, contact <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a>.</p>
+      </section>
+
+      <section id="data-security">
+        <h2>9. Data Security</h2>
+        <ul>
+          <li>Cashbook data is stored in the App’s on-device database and preference storage.</li>
+          <li>We do not transmit cashbook contents to an app-owned server.</li>
+          <li>Crash reports and ad requests are sent to Google over encrypted connections.</li>
+        </ul>
+        <p>
+          No storage method is perfectly secure. Anyone with access to your unlocked device, or copies in device backups,
+          could see local data. Use your device lock screen and backup settings you are comfortable with.
+        </p>
+      </section>
+
+      <section id="children">
+        <h2>10. Children’s Privacy</h2>
+        <p>
+          The App is <strong>not directed at children</strong>. We do not knowingly collect personal information from
+          children under 13, and the App’s ads are not intended for them. If you believe a child has contacted us with
+          personal information, email us and we will delete it.
+        </p>
+      </section>
+
+      <section id="international">
+        <h2>11. International Data Transfers</h2>
+        <p>
+          Your cashbook stays on your device (and in any cloud backup you configure at the OS level). We do not host it
+          on our servers.
+        </p>
+        <p>
+          Google may process crash and advertising data in countries other than your own, including the United States,
+          under its own safeguards and policies.
+        </p>
+      </section>
+
+      <section id="regional">
+        <h2>12. Regional Notices</h2>
+        <h3>India (Digital Personal Data Protection Act, 2023)</h3>
+        <p>
+          Akshay Bhujang is responsible for how the App is designed and for personal data you send us (for example by email).
+          Local cashbook data is processed on your device under your control. Grievance contact:
+          <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a>.
+        </p>
+        <h3>European Economic Area and United Kingdom (GDPR / UK GDPR)</h3>
+        <p>
+          Where GDPR applies, we rely on performance of the service you request (on-device cashbook features), legitimate
+          interests in keeping the App stable, and consent where required (for example notification permission and
+          advertising consent). You may have rights of access, rectification, erasure, restriction, portability, and
+          objection, and the right to complain to your supervisory authority.
+        </p>
+        <h3>California (CCPA / CPRA)</h3>
+        <p>
+          We do not sell your personal information in exchange for money. The App uses Google AdMob to show ads, and
+          advertising identifiers may be shared with Google for that purpose, which some laws treat as “sharing” for
+          advertising. You can opt out by resetting your advertising ID or turning off ads personalization in your device
+          settings. We do not share your cashbook contents. To request deletion of information you emailed us, contact
+          <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a>.
+        </p>
+      </section>
+
+      <section id="third-party-services">
+        <h2>13. Third-Party Services</h2>
+        <p>
+          The App uses standard mobile libraries for on-device storage, local notifications, and file save/share (for example
+          Expo / React Native components). Those libraries run on your device to provide App features; they do not upload your
+          cashbook to us.
+        </p>
+        <p>The App also integrates the following Google services, which have their own privacy policies:</p>
+        <ul>
+          <li><strong>Firebase Crashlytics:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a></li>
+          <li><strong>Google AdMob:</strong> <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        </ul>
+        <p>This policy does not cover other apps or websites you use when you share a PDF or leave the App.</p>
+      </section>
+
+      <section id="changes">
+        <h2>14. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy. The “Last updated” date at the top will change when we do. For important
+          changes, we may provide notice in the App or on the store listing where required.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>15. Contact Us</h2>
+        <div class="contact-block">
+          <p><strong>App:</strong> Ledger</p>
+          <p><strong>Developer:</strong> Monarch</p>
+          <p><strong>Email:</strong> <a href="mailto:expense.logger.987@gmail.com">expense.logger.987@gmail.com</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <footer>
-    <p>This policy describes the current release of expense-logger-app without in-app advertising. It is not legal advice.</p>
+    <p>© 2025–2026 Akshay Bhujang. Ledger.</p>
   </footer>
+
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+      var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var toc = document.querySelector('.toc details');
+      if (window.matchMedia('(max-width: 52rem)').matches && toc) toc.removeAttribute('open');
+      if (!('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sections.forEach(function (s) { if (s) obs.observe(s); });
+    })();
+  </script>
 </body>
 </html>
